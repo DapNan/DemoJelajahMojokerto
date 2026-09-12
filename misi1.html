@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misi 1 - Candi Bajang Ratu | map Mojokerto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="misi1.css">
+</head>
+
+<body>
+  <main class="mission-app">
+
+    <header class="mission-topbar">
+      <a href="map.html" class="back-button">
+        <i class="fa-solid fa-arrow-left"></i>
+        Kembali
+      </a>
+
+      <div class="mission-progress-wrap">
+        <span id="stageText">1 dari 8</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. CANDI -->
+    <section class="mission-stage active" data-stage="1">
+      <div class="stage-content hero-stage">
+        <div class="stage-badge">MISI 1</div>
+        <h1>Petualangan<br>Candi Bajang Ratu</h1>
+        <p class="stage-subtitle">
+          Perjalananmu dimulai dari sebuah peninggalan budaya.
+          Amati, baca, pilih, lalu selesaikan tantangannya.
+        </p>
+
+        <button class="primary-button next-stage">
+          Mulai Petualangan
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. CERITA -->
+    <section class="mission-stage" data-stage="2">
+      <div class="stage-content">
+        <div class="story-card">
+          <span class="mini-label">CERITA PEMBUKA</span>
+          <h2>Kamu sudah tiba di Candi Bajang Ratu.</h2>
+          <p>
+            Hari ini kamu berperan sebagai penmap muda.
+            Tugasmu adalah mengamati lingkungan candi, membaca
+            informasi, lalu mengambil keputusan untuk menyelesaikan misi.
+          </p>
+          <p>
+            Perhatikan setiap petunjuk karena keputusanmu akan
+            menentukan langkah berikutnya.
+          </p>
+
+          <button class="primary-button next-stage">
+            Lanjut Eksplorasi
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+<!-- 3. EKSPLORASI -->
+<section class="mission-stage" data-stage="3">
+  <div class="stage-content">
+
+    <div class="explore-card">
+
+      <span class="mini-label">EKSPLORASI CANDI</span>
+
+      <h2>Amati Candi Bajang Ratu!</h2>
+
+      <p class="explore-description">
+        Perhatikan gambar candi dengan teliti, kemudian temukan
+        hal-hal menarik yang ada di dalamnya.
+      </p>
+
+  <!-- TEMPAT GAMBAR -->
+<div class="explore-image-placeholder">
+  <img
+    src="assets/candibajangratu.jpg"
+    alt="Candi Bajang Ratu"
+  >
+</div>
+
+      <p class="explore-hint">
+        🔎 Amati bentuk bangunan, bagian candi, dan lingkungan di sekitarnya.
+      </p>
+
+      <button class="primary-button next-stage">
+        Sudah Mengamati
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- 4. BACA INFORMASI -->
+    <section class="mission-stage" data-stage="4">
+      <div class="stage-content">
+        <div class="info-card">
+          <span class="mini-label">BACA INFORMASI</span>
+          <h2>Kenali Candi Bajang Ratu</h2>
+          <p>
+            Baca informasi yang tersedia sebelum mengambil keputusan.
+            Perhatikan hubungan antara benda, bentuk, dan lingkungan
+            yang kamu amati pada perjalanan ini.
+          </p>
+
+          <div class="info-tip">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>
+              Ingat informasi yang kamu baca karena akan membantu
+              menyelesaikan tantangan berikutnya.
+            </span>
+          </div>
+
+          <button class="primary-button next-stage">
+            Lanjut ke Keputusan
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. AMBIL KEPUTUSAN -->
+    <section class="mission-stage" data-stage="5">
+      <div class="stage-content">
+        <div class="question-card">
+          <span class="mini-label">AMBIL KEPUTUSAN</span>
+          <h2>
+            Saat berada di kawasan candi, tindakan mana yang paling tepat?
+          </h2>
+
+          <div class="choice-grid decision-choices">
+            <button class="choice-button" data-correct="true">
+              <span class="choice-letter">A</span>
+              Mengamati dan menjaga lingkungan candi dengan baik
+            </button>
+
+            <button class="choice-button" data-correct="false">
+              <span class="choice-letter">B</span>
+              Menyentuh bagian bangunan untuk melihat lebih dekat
+            </button>
+
+            <button class="choice-button" data-correct="false">
+              <span class="choice-letter">C</span>
+              Membuang sampah di area yang kosong
+            </button>
+          </div>
+
+          <div class="feedback-box" id="decisionFeedback"></div>
+
+          <button class="primary-button hidden next-stage" id="decisionNext">
+            Lanjut Tantangan
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. NUMERASI -->
+    <section class="mission-stage" data-stage="6">
+      <div class="stage-content">
+        <div class="question-card numeracy-card">
+          <span class="mini-label">TANTANGAN NUMERASI</span>
+
+          <h2>
+            Dalam simulasi perjalanan, ada
+            <strong>4</strong> bagian jalur.
+            Setiap bagian memiliki <strong>6</strong> batu pijakan.
+            Berapa jumlah batu pijakan seluruhnya?
+          </h2>
+
+          <div class="numeracy-form">
+            <input
+              type="number"
+              id="numeracyAnswer"
+              inputmode="numeric"
+              placeholder="Tulis jawabanmu"
+              aria-label="Jawaban numerasi"
+            >
+            <button class="secondary-button" id="checkNumeracy">
+              Periksa Jawaban
+            </button>
+          </div>
+
+          <div class="feedback-box" id="numeracyFeedback"></div>
+
+          <button class="primary-button hidden next-stage" id="numeracyNext">
+            Tentukan Hasil
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HASIL -->
+    <section class="mission-stage" data-stage="7">
+      <div class="stage-content">
+        <div class="result-card">
+          <div class="result-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+
+          <span class="mini-label">CANDI BEREAKSI</span>
+          <h2>Misi berhasil!</h2>
+
+          <p>
+            Pilihanmu tepat dan tantangan numerasimu selesai.
+            Lingkungan candi terasa lebih hidup karena kamu
+            menjaga tempat yang kamu jelajahi.
+          </p>
+
+          <div class="result-stats">
+            <div>
+              <strong id="xpScore">100</strong>
+              <span>XP</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>Misi</span>
+            </div>
+          </div>
+
+          <button class="primary-button next-stage">
+            Lihat Refleksi
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. REFLEKSI -->
+    <section class="mission-stage" data-stage="8">
+      <div class="stage-content">
+        <div class="reflection-card">
+          <span class="mini-label">REFLEKSI</span>
+
+          <h2>
+            Apa hal baru yang kamu pelajari dari perjalanan di candi?
+          </h2>
+
+          <textarea
+            id="reflection"
+            rows="5"
+            placeholder="Tuliskan jawabanmu di sini..."
+          ></textarea>
+
+          <div class="reflection-actions">
+            <button class="secondary-button" id="saveReflection">
+              Simpan Refleksi
+            </button>
+
+            <a href="map.html" class="primary-button link-button">
+              Kembali ke Peta
+              <i class="fa-solid fa-map"></i>
+            </a>
+          </div>
+
+          <p class="save-message" id="saveMessage"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const stages = [...document.querySelectorAll('.mission-stage')];
+    const progressFill = document.getElementById('progressFill');
+    const stageText = document.getElementById('stageText');
+    let currentStage = 1;
+
+    function showStage(stageNumber) {
+      currentStage = stageNumber;
+
+      stages.forEach(stage => {
+        stage.classList.toggle(
+          'active',
+          Number(stage.dataset.stage) === stageNumber
+        );
+      });
+
+      const percent = ((stageNumber - 1) / (stages.length - 1)) * 100;
+      progressFill.style.width = `${percent}%`;
+      stageText.textContent = `${stageNumber} dari ${stages.length}`;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.next-stage').forEach(button => {
+      button.addEventListener('click', () => {
+        if (currentStage < stages.length) {
+          showStage(currentStage + 1);
+        }
+      });
+    });
+
+    // Keputusan
+    const decisionChoices = document.querySelectorAll('.decision-choices .choice-button');
+    const decisionFeedback = document.getElementById('decisionFeedback');
+    const decisionNext = document.getElementById('decisionNext');
+
+    decisionChoices.forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.dataset.correct === 'true';
+
+        decisionChoices.forEach(choice => {
+          choice.disabled = true;
+        });
+
+        if (isCorrect) {
+          button.classList.add('correct');
+          decisionFeedback.textContent =
+            'Tepat! Kamu memilih tindakan yang menjaga kawasan candi.';
+          decisionFeedback.className = 'feedback-box success';
+          decisionNext.classList.remove('hidden');
+        } else {
+          button.classList.add('wrong');
+          decisionFeedback.textContent =
+            'Belum tepat. Pilih tindakan yang menjaga kawasan candi.';
+          decisionFeedback.className = 'feedback-box error';
+
+          setTimeout(() => {
+            decisionChoices.forEach(choice => {
+              if (!choice.classList.contains('wrong')) {
+                choice.disabled = false;
+              }
+            });
+          }, 650);
+        }
+      });
+    });
+
+    // Numerasi
+    const numeracyInput = document.getElementById('numeracyAnswer');
+    const numeracyFeedback = document.getElementById('numeracyFeedback');
+    const numeracyNext = document.getElementById('numeracyNext');
+
+    document.getElementById('checkNumeracy').addEventListener('click', () => {
+      const answer = Number(numeracyInput.value);
+
+      if (!numeracyInput.value) {
+        numeracyFeedback.textContent = 'Masukkan jawaban terlebih dahulu.';
+        numeracyFeedback.className = 'feedback-box error';
+        return;
+      }
+
+      if (answer === 24) {
+        numeracyFeedback.textContent = 'Benar! 4 × 6 = 24.';
+        numeracyFeedback.className = 'feedback-box success';
+        numeracyNext.classList.remove('hidden');
+      } else {
+        numeracyFeedback.textContent =
+          'Belum tepat. Coba hitung kembali 4 × 6.';
+        numeracyFeedback.className = 'feedback-box error';
+      }
+    });
+
+    // Refleksi
+    document.getElementById('saveReflection').addEventListener('click', () => {
+      const reflection = document.getElementById('reflection').value.trim();
+      const saveMessage = document.getElementById('saveMessage');
+
+      if (!reflection) {
+        saveMessage.textContent = 'Tuliskan refleksimu terlebih dahulu.';
+        saveMessage.className = 'save-message error-text';
+        return;
+      }
+
+      saveMessage.textContent = 'Refleksi berhasil disimpan.';
+      saveMessage.className = 'save-message success-text';
+    });
+
+    showStage(1);
+  </script>
+</body>
+</html>

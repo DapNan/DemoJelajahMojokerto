@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Misi 2 - Pasar | Jelajah Mojokerto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="misi2.css">
+</head>
+
+<body>
+
+<main class="market-app">
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="market-topbar">
+
+    <a href="map.html" class="back-button">
+      <i class="fa-solid fa-arrow-left"></i>
+      Kembali
+    </a>
+
+    <div class="market-progress">
+      <span id="stageText">1 dari 9</span>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- ================= 1. MASUK PASAR ================= -->
+  <section class="market-stage active" data-stage="1">
+
+    <div class="stage-center">
+
+      <div class="mission-badge">
+        MISI 2
+      </div>
+
+      <h1>
+        Petualangan<br>
+        di Pasar
+      </h1>
+
+      <p>
+        Bantu Ibu berbelanja dengan bijak.
+        Amati kebutuhan, pilih barang, hitung,
+        lalu lihat akibat dari keputusanmu.
+      </p>
+
+      <button class="primary-button next-stage">
+        Masuk Pasar
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 2. BACA SITUASI ================= -->
+  <section class="market-stage" data-stage="2">
+
+    <div class="content-card">
+
+      <span class="section-label">
+        BACA SITUASI
+      </span>
+
+      <h2>
+        Hari ini kamu menemani Ibu berbelanja di pasar.
+      </h2>
+
+      <div class="story-text">
+
+        <p>
+          Ibu membawa uang
+          <strong>Rp50.000</strong>.
+        </p>
+
+        <p>
+          Ibu membutuhkan beberapa bahan untuk memasak
+          di rumah. Namun, Ibu juga ingin menyisakan
+          sebagian uang untuk kebutuhan lain.
+        </p>
+
+        <p>
+          Kamu diminta membantu Ibu menentukan
+          barang yang akan dibeli.
+        </p>
+
+      </div>
+
+      <div class="money-box">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <div>
+          <span>Uang yang dibawa Ibu</span>
+          <strong>Rp50.000</strong>
+        </div>
+
+      </div>
+
+      <button class="primary-button next-stage">
+        Lanjut
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 3. INFORMASI BARANG ================= -->
+  <section class="market-stage" data-stage="3">
+
+    <div class="content-card wide-card">
+
+      <span class="section-label">
+        AMATI INFORMASI BARANG
+      </span>
+
+      <h2>
+        Perhatikan barang dan harganya.
+      </h2>
+
+      <p class="instruction">
+        Sebelum memilih, amati informasi setiap barang.
+      </p>
+
+
+      <div class="goods-grid">
+
+        <div class="goods-card">
+
+          <div class="goods-image">
+            <i class="fa-solid fa-bowl-food"></i>
+          </div>
+
+          <strong>Beras</strong>
+          <span>Rp15.000</span>
+
+          <small>
+            Bahan utama memasak
+          </small>
+
+        </div>
+
+
+        <div class="goods-card">
+
+          <div class="goods-image">
+            <i class="fa-solid fa-carrot"></i>
+          </div>
+
+          <strong>Sayur</strong>
+          <span>Rp7.000</span>
+
+          <small>
+            Bahan makanan
+          </small>
+
+        </div>
+
+
+        <div class="goods-card">
+
+          <div class="goods-image">
+            <i class="fa-solid fa-egg"></i>
+          </div>
+
+          <strong>Telur</strong>
+          <span>Rp12.000</span>
+
+          <small>
+            Bahan makanan
+          </small>
+
+        </div>
+
+
+        <div class="goods-card">
+
+          <div class="goods-image">
+            <i class="fa-solid fa-cookie-bite"></i>
+          </div>
+
+          <strong>Camilan</strong>
+          <span>Rp8.000</span>
+
+          <small>
+            Bukan kebutuhan utama
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <button class="primary-button next-stage">
+        Tentukan Kebutuhan
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 4. TENTUKAN KEBUTUHAN ================= -->
+  <section class="market-stage" data-stage="4">
+
+    <div class="content-card">
+
+      <span class="section-label">
+        TENTUKAN KEBUTUHAN
+      </span>
+
+      <h2>
+        Mana yang sebaiknya diprioritaskan?
+      </h2>
+
+      <p>
+        Ibu perlu bahan untuk memasak dan tetap
+        ingin menyisakan uang.
+      </p>
+
+
+      <div class="choice-list">
+
+        <button
+          class="choice-button priority-choice"
+          data-correct="true"
+        >
+          <span>A</span>
+          Beras, sayur, dan telur
+        </button>
+
+
+        <button
+          class="choice-button priority-choice"
+          data-correct="false"
+        >
+          <span>B</span>
+          Camilan dan minuman
+        </button>
+
+
+        <button
+          class="choice-button priority-choice"
+          data-correct="false"
+        >
+          <span>C</span>
+          Membeli semua barang
+        </button>
+
+      </div>
+
+      <div id="priorityFeedback" class="feedback"></div>
+
+      <button
+        class="primary-button hidden next-stage"
+        id="priorityNext"
+      >
+        Buat Pilihan Belanja
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 5. PILIHAN BELANJA ================= -->
+  <section class="market-stage" data-stage="5">
+
+    <div class="content-card wide-card">
+
+      <div class="shopping-header">
+
+        <div>
+          <span class="section-label">
+            BUAT PILIHAN BELANJA
+          </span>
+
+          <h2>
+            Pilih barang yang akan dibeli.
+          </h2>
+        </div>
+
+        <div class="money-status">
+
+          <span>Sisa uang</span>
+
+          <strong id="remainingMoney">
+            Rp50.000
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <p class="instruction">
+        Tekan barang untuk memilih atau membatalkan pilihan.
+      </p>
+
+
+      <div class="shopping-grid">
+
+        <button
+          class="shopping-item"
+          data-name="Beras"
+          data-price="15000"
+        >
+          <i class="fa-solid fa-bowl-food"></i>
+
+          <strong>Beras</strong>
+
+          <span>Rp15.000</span>
+        </button>
+
+
+        <button
+          class="shopping-item"
+          data-name="Sayur"
+          data-price="7000"
+        >
+          <i class="fa-solid fa-carrot"></i>
+
+          <strong>Sayur</strong>
+
+          <span>Rp7.000</span>
+        </button>
+
+
+        <button
+          class="shopping-item"
+          data-name="Telur"
+          data-price="12000"
+        >
+          <i class="fa-solid fa-egg"></i>
+
+          <strong>Telur</strong>
+
+          <span>Rp12.000</span>
+        </button>
+
+
+        <button
+          class="shopping-item"
+          data-name="Camilan"
+          data-price="8000"
+        >
+          <i class="fa-solid fa-cookie-bite"></i>
+
+          <strong>Camilan</strong>
+
+          <span>Rp8.000</span>
+        </button>
+
+      </div>
+
+
+      <div class="selected-summary">
+
+        <span>
+          Barang yang dipilih
+        </span>
+
+        <strong id="selectedItems">
+          Belum ada barang
+        </strong>
+
+      </div>
+
+
+      <button
+        class="primary-button"
+        id="shoppingNext"
+      >
+        Lanjut
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 6. HITUNG DAN PERTIMBANGKAN ================= -->
+  <section class="market-stage" data-stage="6">
+
+    <div class="content-card">
+
+      <span class="section-label">
+        HITUNG DAN PERTIMBANGKAN
+      </span>
+
+      <h2>
+        Apakah pilihanmu sudah sesuai?
+      </h2>
+
+      <div class="calculation">
+
+        <div>
+          <span>Uang awal</span>
+          <strong>Rp50.000</strong>
+        </div>
+
+        <b>−</b>
+
+        <div>
+          <span>Total belanja</span>
+          <strong id="calculationTotal">
+            Rp0
+          </strong>
+        </div>
+
+        <b>=</b>
+
+        <div class="final-money">
+          <span>Uang tersisa</span>
+          <strong id="calculationRemaining">
+            Rp50.000
+          </strong>
+        </div>
+
+      </div>
+
+
+      <p class="consideration">
+        Pertimbangkan apakah uang yang tersisa
+        masih cukup untuk kebutuhan lain.
+      </p>
+
+
+      <div class="choice-list">
+
+        <button
+          class="choice-button consideration-choice"
+          data-correct="true"
+        >
+          Pilihan saya sudah dipertimbangkan dengan baik
+        </button>
+
+        <button
+          class="choice-button consideration-choice"
+          data-correct="false"
+        >
+          Saya akan membeli barang sebanyak mungkin
+        </button>
+
+      </div>
+
+
+      <div id="considerationFeedback" class="feedback"></div>
+
+
+      <button
+        class="primary-button hidden next-stage"
+        id="considerationNext"
+      >
+        Konfirmasi Keputusan
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 7. KONFIRMASI ================= -->
+  <section class="market-stage" data-stage="7">
+
+    <div class="content-card">
+
+      <div class="big-icon">
+        <i class="fa-solid fa-basket-shopping"></i>
+      </div>
+
+      <span class="section-label">
+        KONFIRMASI KEPUTUSAN
+      </span>
+
+      <h2>
+        Periksa kembali pilihanmu.
+      </h2>
+
+      <div id="confirmationList" class="confirmation-list">
+      </div>
+
+      <div class="confirmation-total">
+
+        <span>Total belanja</span>
+
+        <strong id="confirmationTotal">
+          Rp0
+        </strong>
+
+      </div>
+
+
+      <button
+        class="primary-button"
+        id="confirmButton"
+      >
+        Konfirmasi
+        <i class="fa-solid fa-check"></i>
+      </button>
+
+
+      <div id="confirmFeedback" class="feedback"></div>
+
+
+      <button
+        class="primary-button hidden next-stage"
+        id="confirmNext"
+      >
+        Lihat Konsekuensi
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 8. KONSEKUENSI ================= -->
+  <section class="market-stage" data-stage="8">
+
+    <div class="content-card">
+
+      <div class="big-icon">
+        <i class="fa-solid fa-scale-balanced"></i>
+      </div>
+
+      <span class="section-label">
+        LIHAT KONSEKUENSI
+      </span>
+
+      <h2>
+        Lihat akibat dari keputusanmu.
+      </h2>
+
+
+      <div class="consequence-grid">
+
+        <div>
+          <span>Total belanja</span>
+
+          <strong id="consequenceTotal">
+            Rp0
+          </strong>
+        </div>
+
+        <div>
+          <span>Uang tersisa</span>
+
+          <strong id="consequenceRemaining">
+            Rp50.000
+          </strong>
+        </div>
+
+      </div>
+
+
+      <div class="impact-bar">
+        <div id="impactFill"></div>
+      </div>
+
+
+      <p id="consequenceText">
+      </p>
+
+
+      <button class="primary-button next-stage">
+        Lanjut Refleksi
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 9. REFLEKSI ================= -->
+  <section class="market-stage" data-stage="9">
+
+    <div class="content-card">
+
+      <span class="section-label">
+        REFLEKSI
+      </span>
+
+      <h2>
+        Apa yang kamu pertimbangkan
+        sebelum memilih barang?
+      </h2>
+
+      <p>
+        Tuliskan alasanmu dengan singkat.
+      </p>
+
+
+      <textarea
+        id="reflection"
+        rows="5"
+        placeholder="Contoh: Saya memilih barang yang lebih dibutuhkan agar uang Ibu masih tersisa."
+      ></textarea>
+
+
+      <button
+        class="primary-button"
+        id="saveReflection"
+      >
+        Simpan Refleksi
+        <i class="fa-solid fa-floppy-disk"></i>
+      </button>
+
+
+      <p id="saveMessage" class="save-message"></p>
+
+
+      <a href="map.html" class="map-link">
+        <i class="fa-solid fa-map"></i>
+        Kembali ke Peta
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+const stages = [
+  ...document.querySelectorAll(".market-stage")
+];
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const stageText =
+  document.getElementById("stageText");
+
+let currentStage = 1;
+
+const initialMoney = 50000;
+
+let selectedProducts = [];
+
+
+/* ================= NAVIGASI ================= */
+
+function showStage(stageNumber) {
+
+  currentStage = stageNumber;
+
+  stages.forEach(stage => {
+
+    stage.classList.toggle(
+      "active",
+      Number(stage.dataset.stage) === stageNumber
+    );
+
+  });
+
+  const percentage =
+    ((stageNumber - 1) / (stages.length - 1)) * 100;
+
+  progressFill.style.width =
+    percentage + "%";
+
+  stageText.textContent =
+    `${stageNumber} dari ${stages.length}`;
+
+  updateShopping();
+
+  if (stageNumber === 7) {
+    createConfirmation();
+  }
+
+  if (stageNumber === 8) {
+    createConsequence();
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+document.querySelectorAll(".next-stage")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      if (currentStage < stages.length) {
+        showStage(currentStage + 1);
+      }
+
+    });
+
+  });
+
+
+/* ================= KEBUTUHAN ================= */
+
+const priorityButtons =
+  document.querySelectorAll(".priority-choice");
+
+const priorityFeedback =
+  document.getElementById("priorityFeedback");
+
+const priorityNext =
+  document.getElementById("priorityNext");
+
+
+priorityButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const correct =
+      button.dataset.correct === "true";
+
+    priorityButtons.forEach(btn => {
+      btn.disabled = true;
+    });
+
+
+    if (correct) {
+
+      button.classList.add("correct");
+
+      priorityFeedback.textContent =
+        "Tepat! Kebutuhan utama sebaiknya diprioritaskan.";
+
+      priorityFeedback.className =
+        "feedback success";
+
+      priorityNext.classList.remove("hidden");
+
+    } else {
+
+      button.classList.add("wrong");
+
+      priorityFeedback.textContent =
+        "Coba pertimbangkan kembali kebutuhan Ibu.";
+
+      priorityFeedback.className =
+        "feedback error";
+
+      setTimeout(() => {
+
+        priorityButtons.forEach(btn => {
+          btn.disabled = false;
+        });
+
+        button.classList.remove("wrong");
+
+      }, 700);
+
+    }
+
+  });
+
+});
+
+
+/* ================= BELANJA ================= */
+
+const shoppingItems =
+  document.querySelectorAll(".shopping-item");
+
+shoppingItems.forEach(item => {
+
+  item.addEventListener("click", () => {
+
+    const name =
+      item.dataset.name;
+
+    const price =
+      Number(item.dataset.price);
+
+
+    const index =
+      selectedProducts.findIndex(
+        product => product.name === name
+      );
+
+
+    if (index >= 0) {
+
+      selectedProducts.splice(index, 1);
+
+      item.classList.remove("selected");
+
+    } else {
+
+      const currentTotal =
+        selectedProducts.reduce(
+          (sum, product) => sum + product.price,
+          0
+        );
+
+
+      if (currentTotal + price > initialMoney) {
+
+        alert(
+          "Uang Ibu tidak cukup untuk pilihan tersebut."
+        );
+
+        return;
+      }
+
+
+      selectedProducts.push({
+        name: name,
+        price: price
+      });
+
+      item.classList.add("selected");
+
+    }
+
+
+    updateShopping();
+
+  });
+
+});
+
+
+function getTotal() {
+
+  return selectedProducts.reduce(
+    (sum, product) => sum + product.price,
+    0
+  );
+
+}
+
+
+function rupiah(number) {
+
+  return "Rp" +
+    number.toLocaleString("id-ID");
+
+}
+
+
+function updateShopping() {
+
+  const total = getTotal();
+
+  const remaining =
+    initialMoney - total;
+
+
+  document.getElementById(
+    "remainingMoney"
+  ).textContent = rupiah(remaining);
+
+
+  document.getElementById(
+    "calculationTotal"
+  ).textContent = rupiah(total);
+
+
+  document.getElementById(
+    "calculationRemaining"
+  ).textContent = rupiah(remaining);
+
+
+  document.getElementById(
+    "confirmationTotal"
+  ).textContent = rupiah(total);
+
+
+  const selectedText =
+    document.getElementById("selectedItems");
+
+
+  if (selectedProducts.length === 0) {
+
+    selectedText.textContent =
+      "Belum ada barang";
+
+  } else {
+
+    selectedText.textContent =
+      selectedProducts
+        .map(product => product.name)
+        .join(", ");
+
+  }
+
+}
+
+
+document
+  .getElementById("shoppingNext")
+  .addEventListener("click", () => {
+
+    if (selectedProducts.length === 0) {
+
+      alert(
+        "Pilih setidaknya satu barang terlebih dahulu."
+      );
+
+      return;
+    }
+
+    showStage(6);
+
+  });
+
+
+/* ================= PERTIMBANGAN ================= */
+
+const considerationButtons =
+  document.querySelectorAll(".consideration-choice");
+
+const considerationFeedback =
+  document.getElementById("considerationFeedback");
+
+const considerationNext =
+  document.getElementById("considerationNext");
+
+
+considerationButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const correct =
+      button.dataset.correct === "true";
+
+
+    considerationButtons.forEach(btn => {
+      btn.disabled = true;
+    });
+
+
+    if (correct) {
+
+      button.classList.add("correct");
+
+      considerationFeedback.textContent =
+        "Baik! Kamu sudah mempertimbangkan kebutuhan dan uang yang tersisa.";
+
+      considerationFeedback.className =
+        "feedback success";
+
+      considerationNext.classList.remove(
+        "hidden"
+      );
+
+    } else {
+
+      button.classList.add("wrong");
+
+      considerationFeedback.textContent =
+        "Coba pertimbangkan kembali kebutuhan dan sisa uang Ibu.";
+
+      considerationFeedback.className =
+        "feedback error";
+
+      setTimeout(() => {
+
+        considerationButtons.forEach(btn => {
+          btn.disabled = false;
+        });
+
+        button.classList.remove("wrong");
+
+      }, 700);
+
+    }
+
+  });
+
+});
+
+
+/* ================= KONFIRMASI ================= */
+
+function createConfirmation() {
+
+  const list =
+    document.getElementById("confirmationList");
+
+  list.innerHTML = "";
+
+
+  selectedProducts.forEach(product => {
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "confirmation-item";
+
+
+    item.innerHTML = `
+      <span>${product.name}</span>
+      <strong>${rupiah(product.price)}</strong>
+    `;
+
+
+    list.appendChild(item);
+
+  });
+
+}
+
+
+const confirmButton =
+  document.getElementById("confirmButton");
+
+const confirmFeedback =
+  document.getElementById("confirmFeedback");
+
+const confirmNext =
+  document.getElementById("confirmNext");
+
+
+confirmButton.addEventListener("click", () => {
+
+  confirmButton.disabled = true;
+
+  confirmButton.classList.add(
+    "confirmed"
+  );
+
+
+  confirmFeedback.textContent =
+    "Keputusan belanjamu sudah dikonfirmasi.";
+
+  confirmFeedback.className =
+    "feedback success";
+
+
+  confirmNext.classList.remove(
+    "hidden"
+  );
+
+});
+
+
+/* ================= KONSEKUENSI ================= */
+
+function createConsequence() {
+
+  const total =
+    getTotal();
+
+  const remaining =
+    initialMoney - total;
+
+
+  document.getElementById(
+    "consequenceTotal"
+  ).textContent =
+    rupiah(total);
+
+
+  document.getElementById(
+    "consequenceRemaining"
+  ).textContent =
+    rupiah(remaining);
+
+
+  const percentage =
+    (total / initialMoney) * 100;
+
+
+  document.getElementById(
+    "impactFill"
+  ).style.width =
+    percentage + "%";
+
+
+  const text =
+    document.getElementById(
+      "consequenceText"
+    );
+
+
+  if (remaining >= 20000) {
+
+    text.textContent =
+      "Pilihanmu membuat uang yang tersisa masih cukup untuk kebutuhan lain.";
+
+  } else {
+
+    text.textContent =
+      "Uang yang tersisa lebih sedikit. Kamu perlu mempertimbangkan kembali kebutuhan lain.";
+
+  }
+
+}
+
+
+/* ================= REFLEKSI ================= */
+
+document
+  .getElementById("saveReflection")
+  .addEventListener("click", () => {
+
+    const reflection =
+      document
+        .getElementById("reflection")
+        .value
+        .trim();
+
+
+    const message =
+      document.getElementById(
+        "saveMessage"
+      );
+
+
+    if (!reflection) {
+
+      message.textContent =
+        "Tuliskan refleksimu terlebih dahulu.";
+
+      message.className =
+        "save-message error-text";
+
+      return;
+    }
+
+
+    message.textContent =
+      "Refleksi berhasil disimpan.";
+
+    message.className =
+      "save-message success-text";
+
+  });
+
+
+/* Mulai dari tahap pertama */
+
+showStage(1);
+
+</script>
+
+</body>
+</html>

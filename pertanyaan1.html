@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pertanyaan 1 - Candi | Jelajah Mojokerto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section class="question-page">
+
+    <!-- KEMBALI -->
+    <a href="misi1.html" class="mission-back">
+      ← Kembali
+    </a>
+
+
+    <!-- JUDUL -->
+    <div class="question-header">
+
+      <span class="mission-label">
+        MISI 1 • PERTANYAAN 1
+      </span>
+
+      <h1>
+        Yuk, Amati Candinya!
+      </h1>
+
+    </div>
+
+
+    <!-- KARTU PERTANYAAN -->
+    <div class="question-card">
+
+      <div class="question-number">
+        01
+      </div>
+
+      <h2>
+        Menurutmu, apa fungsi utama candi pada masa lalu?
+      </h2>
+
+
+      <div class="answer-list">
+
+        <button class="answer-button" onclick="checkAnswer(this, false)">
+          Tempat ibadah dan kegiatan keagamaan
+        </button>
+
+        <button class="answer-button" onclick="checkAnswer(this, false)">
+          Tempat berjualan kebutuhan sehari-hari
+        </button>
+
+        <button class="answer-button" onclick="checkAnswer(this, true)">
+          Tempat bermain anak-anak
+        </button>
+
+        <button class="answer-button" onclick="checkAnswer(this, false)">
+          Tempat menyimpan hasil panen
+        </button>
+
+      </div>
+
+
+      <div id="answer-feedback" class="answer-feedback"></div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+    function checkAnswer(button, correct) {
+
+      const buttons = document.querySelectorAll('.answer-button');
+      const feedback = document.getElementById('answer-feedback');
+
+      buttons.forEach(btn => {
+        btn.disabled = true;
+      });
+
+      if (correct) {
+
+        button.classList.add('correct');
+
+        feedback.textContent = '🎉 Benar! Kamu berhasil menjawab pertanyaan ini.';
+        feedback.classList.add('success');
+
+      } else {
+
+        button.classList.add('wrong');
+
+        feedback.textContent = 'Belum tepat. Coba perhatikan kembali informasi tentang candi.';
+        feedback.classList.add('error');
+
+      }
+    }
+  </script>
+
+</body>
+</html>
