@@ -49,9 +49,9 @@
 
 
     <!-- ================= TENTANG PRODUK ================= -->
-    <section class="about-card">
+    <section class="about-card scroll-reveal">
 
-      <div class="about-text">
+      <div class="about-text scroll-left">
 
         <h1>Tentang Produk</h1>
 
@@ -72,7 +72,7 @@
       <img
         src="assets/karakter.png"
         alt="Karakter penjelajah"
-        class="character-about"
+        class="character-about scroll-right"
       >
 
     </section>
@@ -94,7 +94,7 @@
       <div class="steps">
 
         <!-- LANGKAH 1 -->
-        <div class="step-card">
+        <div class="step-card stagger-reveal">
 
           <div class="step-icon">
             🗺️
@@ -111,7 +111,7 @@
 
 
         <!-- LANGKAH 2 -->
-        <div class="step-card">
+        <div class="step-card stagger-reveal">
 
           <div class="step-icon">
             🎯
@@ -128,7 +128,7 @@
 
 
         <!-- LANGKAH 3 -->
-        <div class="step-card">
+        <div class="step-card stagger-reveal">
 
           <div class="step-icon">
             🏆
@@ -165,7 +165,7 @@
       <div class="location-preview">
 
         <!-- CANDI -->
-        <div class="preview-card">
+        <div class="preview-card stagger-reveal">
 
           <img
             src="assets/candi.png"
@@ -178,7 +178,7 @@
 
 
         <!-- PASAR -->
-        <div class="preview-card">
+        <div class="preview-card stagger-reveal">
 
           <img
             src="assets/pasar.png"
@@ -191,7 +191,7 @@
 
 
         <!-- SAWAH -->
-        <div class="preview-card">
+        <div class="preview-card stagger-reveal">
 
           <img
             src="assets/sawah.png"
@@ -204,7 +204,7 @@
 
 
         <!-- SUNGAI -->
-        <div class="preview-card">
+        <div class="preview-card stagger-revea">
 
           <img
             src="assets/sungai.png"
@@ -217,7 +217,7 @@
 
 
         <!-- KAMPUNG -->
-        <div class="preview-card">
+        <div class="preview-card stagger-revea">
 
           <img
             src="assets/kampung.png"
@@ -253,6 +253,33 @@
     </footer>
 
   </section>
+<script>
+  const revealElements = document.querySelectorAll(
+    '.scroll-reveal, .scroll-left, .scroll-right, .stagger-reveal'
+  );
 
+  const observer = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add('show');
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.15
+  });
+
+
+  revealElements.forEach(element => {
+    observer.observe(element);
+  });
+</script>
 </body>
 </html>

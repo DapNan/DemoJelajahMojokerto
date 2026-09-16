@@ -58,32 +58,68 @@
    </a>
   
   <!-- SAWAH -->
-  <div class="map-location location-sawah">
-    <button class="location-button" onclick="alert('Buka Misi 2')">
-      <img src="assets/sawah.png" alt="Sawah">
-      <strong>Sawah</strong>
-      <span>(Buka Misi 2)</span>
-    </button>
+<div class="map-location location-sawah">
+  <button class="location-button locked" onclick="showLocked(this)">
+    <img src="assets/sawah.png" alt="Sawah">
+    <strong>Sawah</strong>
+    <span>(Buka Misi 2)</span>
+  </button>
+
+  <div class="locked-message">
+    <i class="fa-solid fa-lock"></i>
+    <strong>Misi belum terbuka</strong>
+    <span>Selesaikan misi sebelumnya</span>
   </div>
+</div>
 
   <!-- SUNGAI -->
-  <div class="map-location location-sungai">
-    <button class="location-button" onclick="alert('Buka Misi 3')">
-      <img src="assets/sungai.png" alt="Sungai">
-      <strong>Sungai</strong>
-      <span>(Buka Misi 3)</span>
-    </button>
-  </div>
+<div class="map-location location-sungai">
+  <button class="location-button locked" onclick="showLocked(this)">
+    <img src="assets/sungai.png" alt="Sungai">
+    <strong>Sungai</strong>
+    <span>(Buka Misi 3)</span>
+  </button>
 
-  <!-- KAMPUNG -->
-  <div class="map-location location-kampung">
-    <button class="location-button" onclick="alert('Buka Misi 4')">
-      <img src="assets/kampung.png" alt="Kampung">
-      <strong>Kampung</strong>
-      <span>(Buka Misi 4)</span>
-    </button>
+  <div class="locked-message">
+    <i class="fa-solid fa-lock"></i>
+    <strong>Misi belum terbuka</strong>
+    <span>Selesaikan misi sebelumnya.</span>
   </div>
+</div>
+  <!-- KAMPUNG -->
+<div class="map-location location-kampung">
+  <button class="location-button locked" onclick="showLocked(this)">
+    <img src="assets/kampung.png" alt="Kampung">
+    <strong>Kampung</strong>
+    <span>(Buka Misi 4)</span>
+  </button>
+
+  <div class="locked-message">
+    <i class="fa-solid fa-lock"></i>
+    <strong>Misi belum terbuka</strong>
+    <span>Selesaikan misi sebelumnya.</span>
+  </div>
+</div>
 
 </section>
+<script>
+  function showLocked(button) {
+
+    const message =
+      button.parentElement.querySelector('.locked-message');
+
+    button.classList.remove('shake');
+
+    void button.offsetWidth;
+
+    button.classList.add('shake');
+
+    message.classList.add('show');
+
+    setTimeout(() => {
+      message.classList.remove('show');
+    }, 2500);
+  }
+</script>
 </body>
 </html>

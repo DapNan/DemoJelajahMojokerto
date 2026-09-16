@@ -203,6 +203,321 @@ button { cursor: pointer; }
   font-size: 16px;
   line-height: 1.35;
 }
+/* =====================================================
+   ANIMASI LANDING PAGE
+   ===================================================== */
+
+
+/* ================= HERO ================= */
+
+.hero-logo .logo {
+  animation: logoReveal 1s ease-out both;
+}
+
+.hero-logo p {
+  animation: fadeUp .8s ease-out .35s both;
+}
+
+.hero-logo .start-button {
+  animation: fadeUp .8s ease-out .6s both;
+}
+
+
+/* Logo muncul dengan sedikit zoom */
+
+@keyframes logoReveal {
+
+  from {
+    opacity: 0;
+    transform: scale(.82);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* Elemen muncul dari bawah */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ================= KARAKTER ================= */
+
+.floating-character {
+  animation: characterFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes characterFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+
+/* ================= TOMBOL ================= */
+
+.start-button,
+.explore-button {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Efek kilau saat hover */
+
+.start-button::after,
+.explore-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: rgba(255,255,255,.28);
+
+  transform: skewX(-25deg);
+
+  transition: left .5s ease;
+}
+
+.start-button:hover::after,
+.explore-button:hover::after {
+  left: 140%;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-card {
+  animation: aboutReveal .8s ease both;
+}
+
+@keyframes aboutReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ================= KARTU ================= */
+
+.animate-card {
+  animation: cardFloatIn .7s ease both;
+}
+
+@keyframes cardFloatIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Kartu terasa sedikit hidup ketika diarahkan */
+
+.step-card,
+.preview-card {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+}
+
+.preview-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+
+/* ================= ICON CARA BERMAIN ================= */
+
+.step-icon {
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.step-card:hover .step-icon {
+  transform: rotate(-5deg) scale(1.08);
+
+  box-shadow:
+    0 5px 12px rgba(36,81,61,.16);
+}
+
+
+/* ================= GAMBAR LOKASI ================= */
+
+.preview-card img {
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.preview-card:hover img {
+  transform: translateY(-5px) scale(1.05);
+
+  filter:
+    drop-shadow(0 8px 6px rgba(0,0,0,.18));
+}
+
+
+/* ================= LOGIN BUTTON ================= */
+
+.login-badge {
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.login-badge:hover {
+  transform: translateY(-2px) scale(1.04);
+
+  filter: brightness(1.08);
+}
+
+
+/* ================= PREFERS REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+}
+
+/* ================= SCROLL REVEAL ================= */
+
+/* Kondisi awal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Saat masuk layar */
+.scroll-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Animasi dari kiri */
+.scroll-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scroll-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Animasi dari kanan */
+.scroll-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scroll-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Animasi muncul bertahap */
+.stagger-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity .6s ease,
+    transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+
+.stagger-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Delay tiap kartu */
+.stagger-reveal:nth-child(1) {
+  transition-delay: .05s;
+}
+
+.stagger-reveal:nth-child(2) {
+  transition-delay: .15s;
+}
+
+.stagger-reveal:nth-child(3) {
+  transition-delay: .25s;
+}
+
+.stagger-reveal:nth-child(4) {
+  transition-delay: .35s;
+}
+
+.stagger-reveal:nth-child(5) {
+  transition-delay: .45s;
+}
 
 
 /* ================= JELAJAHI MOJOKERTO ================= */
@@ -472,31 +787,48 @@ button { cursor: pointer; }
 .speech-bubble {
   position: absolute;
   z-index: 6;
-  top: 55px;
-  right: 9vw;
-  width: 175px;
-  padding: 15px 18px 28px;
-  background: white;
-  border: 2px solid #222;
-  border-radius: 28px;
-  color: var(--green-light);
-  font-size: 23px;
+
+  top: 150px;
+  right: 10vw;
+
+  width: auto;
+  min-width: 160px;
+
+  padding: 12px 20px;
+
+  background: var(--yellow);
+  color: var(--green-dark);
+
+  border: 3px solid var(--green-dark);
+  border-radius: 22px;
+
+  font-size: 20px;
   font-weight: 800;
+
   text-align: center;
-  line-height: 1.15;
-  filter: drop-shadow(0 7px 0 #111);
+  line-height: 1.1;
+
+  box-shadow: 0 5px 0 rgba(18, 61, 44, .25);
+
+  animation: speechBubbleIn .6s cubic-bezier(.22, 1, .36, 1) .8s both;
 }
 .speech-bubble::after {
-  content: '';
+  content: "";
+
   position: absolute;
-  right: 28px;
-  bottom: -35px;
-  width: 45px;
-  height: 45px;
-  background: white;
-  border-right: 2px solid #222;
-  border-bottom: 2px solid #222;
-  transform: rotate(35deg) skew(-8deg);
+
+  left: 25px;
+  bottom: -14px;
+
+  width: 24px;
+  height: 24px;
+
+  background: var(--yellow);
+
+  border-right: 3px solid var(--green-dark);
+  border-bottom: 3px solid var(--green-dark);
+
+  transform: rotate(45deg);
 }
 
 .character-login {
@@ -519,6 +851,456 @@ button { cursor: pointer; }
   background: rgba(20,45,37,.75);
   padding: 7px 14px;
   border-radius: 999px;
+}
+/* ================= LOGIN ANIMATION ================= */
+
+/* Logo muncul dengan efek zoom */
+.login-logo {
+  animation: loginLogoIn .8s ease-out both;
+}
+
+@keyframes loginLogoIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(.82);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+
+/* Kotak login masuk dari bawah */
+.login-box {
+  animation: loginBoxIn .8s cubic-bezier(.22, 1, .36, 1) .2s both;
+}
+
+@keyframes loginBoxIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Karakter masuk dari kanan */
+.character-login {
+  animation: characterIn .9s cubic-bezier(.22, 1, .36, 1) .3s both;
+}
+
+@keyframes characterIn {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Setelah masuk, karakter sedikit melayang */
+@keyframes characterFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* Speech bubble muncul belakangan */
+.speech-bubble {
+  animation: speechBubbleIn .6s cubic-bezier(.22, 1, .36, 1) .85s both;
+}
+
+@keyframes speechBubbleIn {
+  from {
+    opacity: 0;
+    transform: scale(.8) translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* Input saat disentuh */
+.login-box input {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.login-box input:focus {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 14px rgba(36, 81, 61, .12);
+}
+
+
+/* Tombol masuk */
+.login-box button {
+  transition:
+    transform .2s ease,
+    filter .2s ease,
+    box-shadow .2s ease;
+}
+
+.login-box button:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 0 rgba(18, 61, 44, .15);
+}
+
+
+/* Tombol kembali */
+.back-link {
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-3px);
+
+  filter: brightness(1.08);
+}
+
+
+/* Link daftar */
+.register-text a {
+  transition:
+    opacity .2s ease;
+}
+
+.register-text a:hover {
+  opacity: .7;
+}
+
+
+/* ================= HP ================= */
+
+@media (max-width: 650px) {
+
+  /*
+   * Karakter dan speech bubble memang
+   * tetap disembunyikan di HP.
+   */
+  .character-login,
+  .speech-bubble {
+    animation: none;
+  }
+
+}
+
+/* ================= REGISTER ================= */
+
+.register-page {
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      rgba(24, 70, 54, .05),
+      rgba(24, 70, 54, .05)
+    ),
+    url("assets/hero-mojokerto.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* LOGO */
+
+.register-logo {
+  position: absolute;
+
+  top: 32px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(190px, 30vw);
+
+  z-index: 4;
+
+  animation:
+    loginLogoIn .8s ease-out both;
+}
+
+
+/* KOTAK */
+
+.register-box {
+  width: min(500px, 88vw);
+
+  padding: 32px 38px 30px;
+
+  background:
+    rgba(255, 251, 237, .96);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 12px 0 rgba(23, 46, 37, .13);
+
+  position: relative;
+
+  z-index: 5;
+
+  animation:
+    loginBoxIn .8s cubic-bezier(.22, 1, .36, 1) .15s both;
+}
+
+
+/* JUDUL */
+
+.register-box h1 {
+  text-align: center;
+
+  color: var(--green-light);
+
+  font-size: clamp(32px, 4vw, 43px);
+
+  line-height: 1;
+
+  margin-bottom: 5px;
+}
+
+.register-subtitle {
+  text-align: center;
+
+  color: var(--green-light);
+
+  font-size: 16px;
+
+  margin-bottom: 22px;
+}
+
+
+/* FORM */
+
+.register-box form {
+  display: grid;
+
+  gap: 11px;
+}
+
+
+/* INPUT + SELECT */
+
+.register-box input,
+.register-box select {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 14px 20px;
+
+  background: white;
+
+  border-radius: 999px;
+
+  font-size: 17px;
+
+  color: var(--green);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.register-box input::placeholder {
+  color: #b9b9b9;
+}
+
+.register-box input:focus,
+.register-box select:focus {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 14px rgba(36, 81, 61, .12);
+}
+
+
+/* SELECT */
+
+.register-box select {
+  cursor: pointer;
+
+  appearance: none;
+
+  background:
+    white
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath fill='%2324513d' d='m7 10 5 5 5-5z'/%3E%3C/svg%3E")
+    no-repeat
+    right 18px center;
+
+  padding-right: 45px;
+}
+
+
+/* BUTTON */
+
+.register-box button {
+  border: none;
+
+  padding: 13px;
+
+  margin-top: 5px;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+  color: white;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease,
+    box-shadow .2s ease;
+}
+
+.register-box button:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 0 rgba(18, 61, 44, .15);
+}
+
+
+/* LOGIN TEXT */
+
+.login-text {
+  text-align: center;
+
+  margin-top: 17px;
+
+  font-size: 16px;
+}
+
+.login-text a {
+  color: var(--green-light);
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  opacity: .7;
+}
+
+
+/* KARAKTER */
+
+.character-register {
+  position: absolute;
+
+  z-index: 3;
+
+  right: 3vw;
+  bottom: -30px;
+
+  width: min(350px, 34vw);
+
+  max-height: 80vh;
+
+  object-fit: contain;
+
+  animation:
+    characterIn .9s cubic-bezier(.22, 1, .36, 1) .35s both;
+}
+
+
+/* ================= HP ================= */
+
+@media (max-width: 650px) {
+
+  .register-page {
+    padding: 30px 15px;
+  }
+
+  .register-logo {
+    top: 24px;
+
+    width: 150px;
+  }
+
+  .character-register {
+    display: none;
+  }
+
+  .register-box {
+    width: 100%;
+
+    margin-top: 45px;
+
+    padding: 27px 20px 24px;
+
+    border-radius: 23px;
+  }
+
+  .register-box h1 {
+    font-size: 34px;
+  }
+
+  .register-subtitle {
+    font-size: 14px;
+  }
+
+  .register-box input,
+  .register-box select {
+    padding: 13px 17px;
+
+    font-size: 15px;
+  }
+
+  .register-box button {
+    font-size: 18px;
+  }
+
+  .login-text {
+    font-size: 14px;
+  }
+
 }
 
 /* ================= MAP ================= */
@@ -660,10 +1442,7 @@ overflow: hidden;
   cursor: pointer;
   transition: transform .25s ease, filter .25s ease;
 }
-.location-button:hover {
-  transform: translateY(-6px) scale(1.05);
-  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .25));
-}
+
 .location-button img {
   width: 150px;
   height: auto;
@@ -672,8 +1451,21 @@ overflow: hidden;
   object-fit: contain;
 
   filter: drop-shadow(0 6px 5px rgba(0, 0, 0, .25));
-  animation: floating 2.8s ease-in-out infinite;
+
+  animation: objectFloat 3s ease-in-out infinite;
 }
+
+@keyframes objectFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 @keyframes floating {
   0%, 100% {
     transform: translateY(0);
@@ -701,9 +1493,30 @@ overflow: hidden;
 }
 
 .location-button strong, .location-button span { display: block; }
-.location-button:hover { transform: translateY(-5px) scale(1.03); }
- .location-button.unlocked {
+.location-button:hover {
+  transform: translateY(-6px) scale(1.05);
+
+  filter:
+    drop-shadow(0 8px 10px rgba(0, 0, 0, .25));
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+.location-button:active {
+  transform: translateX(0) scale(.96);
+}
+.location-button.unlocked {
   color: var(--green);
+}
+.location-button:not(.unlocked) {
+  opacity: .7;
+}
+
+.location-button:not(.unlocked) img {
+  filter:
+    grayscale(.35)
+    drop-shadow(0 5px 5px rgba(0, 0, 0, .18));
 }
 
 .location-button.unlocked strong,
@@ -711,23 +1524,23 @@ overflow: hidden;
   background: rgba(255, 239, 111, .9);
   color: var(--green);
 }
-.location-button:not(.unlocked) {
-  opacity: .82;
+
+.location-button.unlocked strong {
+  animation: labelGlow 2s ease-in-out infinite;
 }
 
-.location-button.unlocked {
-  animation: unlockedPulse 2s ease-in-out infinite;
-}
-
-@keyframes unlockedPulse {
-  0%, 100% {
-    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, .2));
+@keyframes labelGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 239, 111, 0);
   }
 
   50% {
-    filter: drop-shadow(0 6px 12px rgba(255, 239, 111, .7));
+    box-shadow:
+      0 0 16px rgba(255, 239, 111, .75);
   }
 }
+
 @media (max-width: 900px) {
   .about-card { padding: 45px 7vw; }
   .character-login { opacity: .65; right: -30px; }
@@ -779,468 +1592,781 @@ overflow: hidden;
 .location-sawah { left: 83%; top: 30%; }
 .location-kampung { left: 24%; top: 50%; }
 .location-sungai { left: 70%; top: 70%; }
+}
+/* ================= MAP ANIMATION ================= */
 
+.map-location {
+  opacity: 0;
+  animation: mapLocationIn .7s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+/* Muncul satu per satu */
+.location-candi {
+  animation-delay: .15s;
+}
+
+.location-pasar {
+  animation-delay: .3s;
+}
+
+.location-sawah {
+  animation-delay: .45s;
+}
+
+.location-kampung {
+  animation-delay: .6s;
+}
+
+.location-sungai {
+  animation-delay: .75s;
+}
+
+@keyframes mapLocationIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(25px) scale(.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* ================= LOCKED LOCATION ================= */
+
+.location-button.locked {
+  cursor: pointer;
+}
+
+.location-button.locked img {
+  opacity: .72;
+  filter:
+    grayscale(.35)
+    drop-shadow(0 5px 5px rgba(0,0,0,.18));
+}
+
+.locked-message {
+  position: absolute;
+
+  left: 50%;
+  bottom: calc(100% + 12px);
+
+  width: 220px;
+
+  padding: 12px 15px;
+
+  background: rgba(18, 61, 44, .96);
+  color: white;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow:
+    0 7px 18px rgba(0,0,0,.22);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateX(-50%)
+    translateY(8px)
+    scale(.95);
+
+  transition:
+    opacity .2s ease,
+    transform .2s ease,
+    visibility .2s ease;
+
+  pointer-events: none;
+}
+
+.locked-message::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 16px;
+  height: 16px;
+
+  background: rgba(18, 61, 44, .96);
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+.locked-message i {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--yellow);
+
+  font-size: 21px;
+}
+
+.locked-message strong,
+.locked-message span {
+  display: block;
+}
+
+.locked-message strong {
+  font-size: 16px;
+}
+
+.locked-message span {
+  margin-top: 2px;
+
+  font-size: 13px;
+
+  opacity: .88;
+}
+
+
+/* Pesan muncul */
+.locked-message.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0)
+    scale(1);
+}
+
+
+/* Efek klik */
+.location-button.locked.shake {
+  animation: lockedShake .35s ease;
+}
+
+@keyframes lockedShake {
+
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+
+  25% {
+    transform: translateX(-5px) scale(1.02);
+  }
+
+  50% {
+    transform: translateX(5px) scale(1.02);
+  }
+
+  75% {
+    transform: translateX(-3px) scale(1.02);
+  }
 
 }
-/* ================= MISSION PAGE ================= */
+/* =========================
+   PROFILE PAGE
+========================= */
 
-.mission-page {
-  position: relative;
+.profile-page {
   min-height: 100vh;
+  padding: 40px 20px 60px;
 
-  background-image:
+  background:
     linear-gradient(
-      rgba(20, 55, 40, .15),
-      rgba(20, 55, 40, .15)
-    ),
-    url("assets/misi1-candi.png");
+      rgba(255,249,233,.90),
+      rgba(255,249,233,.97)
+    );
 
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 35px 20px 50px;
-
-  overflow: hidden;
+  color: var(--green);
 }
 
 
 /* KEMBALI */
 
-.mission-back {
+.profile-back {
   position: absolute;
+
   top: 25px;
   left: 30px;
 
-  padding: 8px 18px;
-
-  background: rgba(18, 61, 44, .85);
-  color: white;
-
-  border-radius: 999px;
-
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 700;
-
-  transition: transform .2s ease;
-}
-
-.mission-back:hover {
-  transform: translateY(-2px);
-}
-
-
-
-
-/* JUDUL */
-
-.mission-header {
-  width: min(700px, 90vw);
-
-  margin-top: 75px;
-
-  text-align: center;
-  color: white;
-
-  text-shadow: 0 3px 8px rgba(0, 0, 0, .35);
-}
-
-.mission-label {
-  display: inline-block;
-
-  padding: 5px 18px;
-
-  background: var(--yellow);
-  color: var(--green-dark);
-
-  border-radius: 999px;
-
-  font-size: 18px;
-  font-weight: 800;
-}
-
-.mission-header h1 {
-  margin-top: 10px;
-
-  font-size: clamp(40px, 6vw, 70px);
-  line-height: 1;
-}
-
-.mission-header p {
-  margin-top: 12px;
-
-  font-size: 19px;
-  font-weight: 600;
-}
-
-
-/* CERITA */
-
-.mission-story {
-  width: min(650px, 90vw);
-
-  margin-top: 35px;
-  padding: 28px 32px;
-
-  background: rgba(255, 251, 237, .94);
-
-  border-radius: 28px;
-
-  box-shadow: 0 10px 0 rgba(18, 61, 44, .18);
-
-  color: var(--green);
-}
-
-.mission-story h2 {
-  margin-bottom: 10px;
-
-  font-size: 30px;
-  color: var(--green-light);
-}
-
-.mission-story p {
-  margin-bottom: 10px;
-
-  font-size: 17px;
-  line-height: 1.35;
-}
-
-
-/* MULAI MISI */
-
-.mission-start {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
 
-  margin-top: 28px;
-  padding: 12px 35px;
-
-  background: var(--yellow);
-  color: var(--green-dark);
-
-  border-radius: 999px;
+  color: var(--green);
 
   text-decoration: none;
 
-  font-size: 21px;
-  font-weight: 800;
+  font-weight: 700;
 
-  box-shadow: 0 6px 0 rgba(18, 61, 44, .25);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+  transition: .2s ease;
 }
 
-.mission-start:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 0 rgba(18, 61, 44, .25);
-}
-
-
-/* ================= HP ================= */
-
-@media (max-width: 650px) {
-
-  .mission-page {
-    padding: 25px 18px 40px;
-    background-position: center;
-  }
-
-  .mission-back {
-    top: 15px;
-    left: 15px;
-    font-size: 14px;
-    padding: 7px 14px;
-  }
-
-  .mission-profile {
-    top: 15px;
-    right: 15px;
-    transform: scale(.8);
-    transform-origin: top right;
-  }
-
-  .mission-header {
-    margin-top: 95px;
-  }
-
-  .mission-header h1 {
-    font-size: 42px;
-  }
-
-  .mission-header p {
-    font-size: 15px;
-  }
-
-  .mission-story {
-    padding: 22px;
-    margin-top: 25px;
-  }
-
-  .mission-story h2 {
-    font-size: 25px;
-  }
-
-  .mission-story p {
-    font-size: 15px;
-  }
-
-  .mission-start {
-    font-size: 18px;
-    padding: 10px 28px;
-  }
-
-}
-
-/* ================= PERTANYAAN ================= */
-
-.question-page {
-  position: relative;
-
-  min-height: 100vh;
-
-  padding: 40px 20px 60px;
-
-  background-image:
-    linear-gradient(
-      rgba(20, 55, 40, .18),
-      rgba(20, 55, 40, .18)
-    ),
-    url("assets/misi1-candi.png");
-
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.profile-back:hover {
+  transform: translateX(-4px);
 }
 
 
 /* HEADER */
 
-.question-header {
-  width: min(800px, 90vw);
+.profile-header {
+  max-width: 760px;
 
-  margin-top: 70px;
+  margin: 35px auto 25px;
 
   text-align: center;
-  color: white;
-
-  text-shadow: 0 3px 8px rgba(0, 0, 0, .35);
 }
 
-.question-header h1 {
-  margin-top: 12px;
+.profile-header h1 {
+  margin: 8px 0;
 
-  font-size: clamp(36px, 5vw, 58px);
-  line-height: 1;
+  color: var(--green);
+
+  font-size: clamp(35px, 6vw, 55px);
+}
+
+.profile-header p {
+  margin: 0;
+
+  color: var(--green-light);
+
+  line-height: 1.6;
 }
 
 
-/* KARTU */
+/* CARD */
 
-.question-card {
-  width: min(700px, 92vw);
+.profile-main-card,
+.achievement-card,
+.journey-card {
+  width: min(850px, 94vw);
 
-  margin-top: 35px;
+  margin: 0 auto 20px;
 
-  padding: 35px;
+  padding: 30px;
 
-  background: rgba(255, 251, 237, .96);
+  box-sizing: border-box;
+
+  background: rgba(255,255,255,.94);
 
   border-radius: 28px;
 
   box-shadow:
-    0 10px 0 rgba(18, 61, 44, .18);
-
-  color: var(--green);
+    0 10px 30px rgba(18,61,44,.10);
 }
 
 
-/* NOMOR SOAL */
+/* AVATAR */
 
-.question-number {
-  width: 55px;
-  height: 55px;
+.profile-avatar-wrapper {
+  position: relative;
+
+  width: fit-content;
+
+  margin: 0 auto;
+}
+
+.profile-big-avatar {
+  width: 125px;
+  height: 125px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 6px solid var(--yellow);
+
+  background: var(--cream);
+}
+
+.profile-big-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.avatar-status {
+  position: absolute;
+
+  right: 3px;
+  bottom: 5px;
+
+  width: 30px;
+  height: 30px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 20px;
+  background: var(--green);
 
-  background: var(--yellow);
-  color: var(--green-dark);
+  color: white;
+
+  border: 3px solid white;
 
   border-radius: 50%;
 
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 13px;
 }
 
-
-/* SOAL */
-
-.question-card h2 {
-  margin-bottom: 25px;
-
-  font-size: clamp(22px, 3vw, 30px);
-
-  line-height: 1.2;
-}
-
-
-/* JAWABAN */
-
-.answer-list {
-  display: grid;
-  gap: 13px;
-}
-
-.answer-button {
-  width: 100%;
-
-  padding: 14px 18px;
-
-  border: 3px solid transparent;
-
-  background: white;
-  color: var(--green);
-
-  border-radius: 18px;
-
-  text-align: left;
-
-  font-size: 17px;
-  font-weight: 700;
-
-  transition:
-    transform .2s ease,
-    background .2s ease,
-    border-color .2s ease;
-}
-
-.answer-button:hover:not(:disabled) {
-  transform: translateX(5px);
-
-  border-color: var(--green-light);
-
-  background: rgba(109, 145, 75, .08);
-}
-
-.answer-button:disabled {
-  cursor: default;
-}
-
-
-/* BENAR */
-
-.answer-button.correct {
-  background: #cde99b;
-
-  border-color: var(--green);
-
-  color: var(--green-dark);
-}
-
-
-/* SALAH */
-
-.answer-button.wrong {
-  background: #ffd7d2;
-
-  border-color: #c94b3c;
-
-  color: #8f2d22;
-}
-
-
-/* FEEDBACK */
-
-.answer-feedback {
-  margin-top: 20px;
-
-  padding: 13px 18px;
-
-  border-radius: 15px;
-
-  font-size: 17px;
-  font-weight: 700;
-
+.profile-main-card {
   text-align: center;
 }
 
-.answer-feedback.success {
-  background: #dff2b8;
+.profile-main-card h2 {
+  margin-top: 12px;
+
+  font-size: 29px;
+}
+
+.profile-level {
+  display: inline-block;
+
+  margin-top: 3px;
+
+  padding: 4px 15px;
+
+  background: var(--yellow);
+
+  color: var(--green-dark);
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.profile-description {
+  color: var(--green-light);
+}
+
+
+/* XP */
+
+.xp-section {
+  max-width: 560px;
+
+  margin: 22px auto 0;
+
+  text-align: left;
+}
+
+.xp-header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+
+  font-size: 13px;
+}
+
+.xp-header strong {
+  color: var(--green);
+}
+
+.xp-track {
+  width: 100%;
+  height: 12px;
+
+  overflow: hidden;
+
+  background: #e4eadf;
+
+  border-radius: 999px;
+}
+
+.xp-fill {
+  height: 100%;
+
+  background: var(--yellow);
+
+  border-radius: 999px;
+
+  transition: width .6s ease;
+}
+
+.xp-section small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--green-light);
+
+  font-size: 11px;
+}
+
+
+/* STATISTIK */
+
+.profile-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.profile-stat {
+  padding: 16px 10px;
+
+  background: var(--cream);
+
+  border-radius: 18px;
+
+  transition: .2s ease;
+}
+
+.profile-stat:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  margin-bottom: 6px;
+
+  color: var(--green-light);
+
+  font-size: 19px;
+}
+
+.profile-stat strong,
+.profile-stat span {
+  display: block;
+}
+
+.profile-stat strong {
+  font-size: 23px;
+}
+
+.profile-stat span {
+  color: var(--green-light);
+
+  font-size: 12px;
+}
+
+
+/* HEADING */
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin-top: 5px;
+
+  font-size: 27px;
+}
+
+.section-heading > i {
+  color: var(--green-light);
+
+  font-size: 25px;
+}
+
+
+/* ACHIEVEMENT */
+
+.achievement-list {
+  display: grid;
+
+  gap: 10px;
+}
+
+.achievement-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px;
+
+  border-radius: 16px;
+}
+
+.achievement-item.unlocked {
+  background: rgba(223,242,184,.35);
+
+  border: 2px solid rgba(109,145,75,.20);
+}
+
+.achievement-item.locked {
+  background: #f5f5f2;
+
+  opacity: .65;
+}
+
+.achievement-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--yellow);
+
+  color: var(--green-dark);
+
+  border-radius: 13px;
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-info strong,
+.achievement-info span {
+  display: block;
+}
+
+.achievement-info strong {
+  font-size: 16px;
+}
+
+.achievement-info span {
+  color: var(--green-light);
+
+  font-size: 12px;
+}
+
+.achievement-status {
+  color: var(--green);
+
+  margin-right: 4px;
+}
+
+
+/* PERJALANAN */
+
+.journey-list {
+  display: grid;
+
+  gap: 10px;
+}
+
+.journey-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px;
+
+  border-radius: 17px;
+
+  text-decoration: none;
+
+  color: var(--green);
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.journey-item.completed {
+  background: rgba(223,242,184,.30);
+}
+
+.journey-item.available {
+  background: rgba(244,216,92,.22);
+}
+
+.journey-item.locked {
+  background: #f3f3ef;
+
+  opacity: .6;
+}
+
+.journey-item.completed:hover,
+.journey-item.available:hover {
+  transform: translateX(5px);
+}
+
+.journey-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: 14px;
+
+  color: var(--green);
+
+  font-size: 20px;
+}
+
+.journey-info {
+  flex: 1;
+}
+
+.journey-info strong,
+.journey-info span {
+  display: block;
+}
+
+.journey-info strong {
+  font-size: 17px;
+}
+
+.journey-info span {
+  margin-top: 2px;
+
+  color: var(--green-light);
+
+  font-size: 12px;
+}
+
+.journey-status {
+  width: 30px;
+
+  text-align: center;
+
+  color: var(--green);
+}
+
+.journey-item.available .journey-status {
   color: var(--green-dark);
 }
 
-.answer-feedback.error {
-  background: #ffe0dc;
-  color: #8f2d22;
+
+/* BUTTON */
+
+.profile-map-button {
+  width: min(850px, 94vw);
+
+  margin: 5px auto 0;
+
+  padding: 13px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  box-sizing: border-box;
+
+  background: var(--green);
+
+  color: white;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  box-shadow:
+    0 6px 0 rgba(18,61,44,.20);
+
+  transition: .2s ease;
+}
+
+.profile-map-button:hover {
+  transform: translateY(-3px);
+
+  background: var(--green-dark);
+
+  box-shadow:
+    0 9px 0 rgba(18,61,44,.20);
 }
 
 
-/* ================= HP ================= */
+/* MOBILE */
 
 @media (max-width: 650px) {
 
-  .question-page {
-    padding: 25px 16px 40px;
+  .profile-page {
+    padding: 65px 14px 40px;
   }
 
-  .question-header {
-    margin-top: 90px;
+  .profile-back {
+    top: 18px;
+    left: 18px;
+
+    font-size: 13px;
   }
 
-  .question-header h1 {
-    font-size: 38px;
+  .profile-main-card,
+  .achievement-card,
+  .journey-card {
+    width: 100%;
+
+    padding: 22px 16px;
+
+    border-radius: 23px;
   }
 
-  .question-card {
-    padding: 24px 20px;
-    margin-top: 25px;
+  .profile-big-avatar {
+    width: 105px;
+    height: 105px;
   }
 
-  .question-card h2 {
-    font-size: 22px;
+  .profile-header h1 {
+    font-size: 34px;
   }
 
-  .answer-button {
-    padding: 12px 14px;
+  .profile-header p {
+    font-size: 13px;
+  }
+
+  .profile-stats {
+    gap: 7px;
+  }
+
+  .profile-stat {
+    padding: 13px 6px;
+  }
+
+  .profile-stat strong {
+    font-size: 20px;
+  }
+
+  .profile-stat span {
+    font-size: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 23px;
+  }
+
+  .achievement-info strong {
+    font-size: 14px;
+  }
+
+  .achievement-info span {
+    font-size: 10px;
+  }
+
+  .journey-info strong {
     font-size: 15px;
   }
 
-}
-/* ================= PROFIL ================= */
+  .journey-info span {
+    font-size: 10px;
+  }
 
-.profile-page {
-  min-height: 100vh;
-
-  padding: 35px 20px 60px;
-
-  background:
-    linear-gradient(
-      rgba(255, 249, 233, .92),
-      rgba(255, 249, 233, .96)
-    ),
-    url("assets/map-mojokerto.jpg");
-
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  color: var(--green);
 }
 
 
